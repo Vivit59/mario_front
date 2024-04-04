@@ -1,0 +1,31 @@
+.texte {
+    display: "flex";
+    flex-direction: "column";
+    justify-content: flex-start;
+    width: 60rem;
+}
+
+h3.MuiTypography-root.MuiTypography-h3.css-gepadz-MuiTypography-root {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h4.MuiTypography-root.MuiTypography-h4.css-5lbw0b-MuiTypography-root {
+    font-size: 1.125rem;
+    font-style: italic;
+}
+
+span.MuiChip-label.MuiChip-labelMedium.css-6od3lo-MuiChip-label {
+    font-size: 1.8125rem;
+}
+
+input#r31.base-NumberInput-input {
+    width: 40px;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.base-NumberInput-incrementButton.css-i4bv87-MuiSvgIcon-root {
+    position: absolute;
+    right: 0;
+    top: '50%';
+    transform: 'translateY(-50%)'
+}

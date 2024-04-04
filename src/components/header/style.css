@@ -1,6 +1,10 @@
-.appBar {
+.appBar.css-1r11njw-MuiPaper-root-MuiAppBar-root {
     background-color: #3b438b;
     color: #fbc02c;
+
+}
+
+h1.MuiTypography-root.MuiTypography-h1.css-o2w69a-MuiTypography-root {
     font-weight: 800;
     font-size: 5rem;
 }

@@ -1,5 +1,8 @@
 {
   "common": {
-    "select": "Sélectionnez vos pizzas"
+    "select": "Sélectionnez vos pizzas",
+    "title": "Chez Mario",
+    "total": "Total",
+    "quantity": "quantité"
   }
 }

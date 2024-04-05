@@ -3,6 +3,13 @@
     "select": "Sélectionnez vos pizzas",
     "title": "Chez Mario",
     "total": "Total",
-    "quantity": "quantité"
+    "quantity": "quantité",
+    "loginPlaceholder": "Numéro de téléphone",
+    "required": "{{field}} obligatoire",
+    "car": "Au moins {{field}} caractères",
+    "passwordPlaceholder": "Mot de passe",
+    "connect": "Connexion",
+    "loginError": "Connexion impossible",
+    "create": "Créer un compte"
   }
 }

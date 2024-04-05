@@ -1,17 +1,26 @@
-import React from "react";
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
-import PizzaList from "./components/pizzaList";
-import { mockDataPizza } from "./data/MockData";
-import Pizza from "./models/pizza";
+import { Route, Routes } from "react-router-dom";
+import Menu from "./pages/menu";
+import Login from "./pages/login";
+import CreateAccount from "./pages/createAccount";
 
 function App() {
-  const pizzaL: Pizza[] = mockDataPizza;
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
   return (
     <div className="App">
-      <Header />
-      <PizzaList pizzas={pizzaL} />
+      <header>
+        <Header />
+      </header>
+      <main>
+        {isAuthenticated ? (
+          <Menu />
+        ) : (
+          <Login setIsAuthenticated={setIsAuthenticated} />
+        )}
+      </main>
     </div>
   );
 }

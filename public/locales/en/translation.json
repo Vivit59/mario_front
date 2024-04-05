@@ -3,6 +3,13 @@
     "select": "Select your pizzas",
     "title": "At Mario's",
     "total": "Total",
-    "quantity": "quantity"
+    "quantity": "quantity",
+    "loginPlaceholder": "Phone number",
+    "required": "{{field}} required",
+    "car": "at least {{field}} characters",
+    "passwordPlaceholder": "Password",
+    "connect": "Connect",
+    "loginError": "Can not connect",
+    "create": "Create an account"
   }
 }

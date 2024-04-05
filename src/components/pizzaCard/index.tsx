@@ -1,10 +1,9 @@
-import { Box, Chip, InputLabel, TextField, Typography } from "@mui/material";
+import { Box, Chip, InputLabel, Typography } from "@mui/material";
 import Pizza from "../../models/pizza";
 import "./style.css";
 import { useTranslation } from "react-i18next";
 import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
 import { Unstable_NumberInput as NumberInput } from "@mui/base/Unstable_NumberInput";
-import { styled } from "@mui/system";
 
 interface Props {
   pizza: Pizza;
@@ -24,7 +23,6 @@ const PizzaCard = ({ pizza }: Props) => {
         <Chip label={pizza.price + " €"} color="success" size="medium" />
         <Box display="flex" alignItems="center" gap="5px">
           <InputLabel>{t("common.quantity")}</InputLabel>
-
           <NumberInput
             id="r31"
             slots={{

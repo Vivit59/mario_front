@@ -10,6 +10,18 @@
     "passwordPlaceholder": "Password",
     "connect": "Connect",
     "loginError": "Can not connect",
-    "create": "Create an account"
+    "create": "Create an account",
+    "phone": "Phone number",
+    "lastName": "Name",
+    "firstName": "First name",
+    "address": "address",
+    "confirm": "Confirmation",
+    "save": "Create",
+    "account": "Create your account"
+  },
+  "error": {
+    "required": "{{field}} is required",
+    "minLen": "at least {{field}} characters",
+    "match": "Passwords do not match"
   }
 }

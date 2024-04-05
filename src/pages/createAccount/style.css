@@ -1,0 +1,75 @@
+#subtitle {
+    color: #3b438b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+#carte {
+    border-radius: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    background-color: #3b438b !important;
+    color: #fbc02c !important;
+    font-weight: 800;
+    margin: 30px;
+}
+
+#carte.MuiInputBase-input.MuiOutlinedInput-input.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    height: 0.437em;
+
+}
+
+#textfield.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    border-radius: 1em;
+    height: 0.1em;
+}
+
+#creer {
+    background-color: #fbc02c;
+    color: #3b438b;
+}
+
+#textfieldFirstName.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    border-radius: 1em;
+    height: 0.1em;
+}
+
+#textfieldPassword.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    border-radius: 1em;
+    height: 0.1em;
+    width: 7em;
+}
+
+#textfieldConfirm.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    border-radius: 1em;
+    height: 0.1em;
+    width: 7em;
+}
+
+#textfieldAd.div.MuiFormControl-root.css-1b25eem-MuiFormControl-root-MuiTextField-root {
+    background-color: #fff !important;
+    border-radius: 2em;
+    width: 50%;
+
+}
+
+div.MuiBox-root>div.MuiFormControl-root>div.MuiInputBase-root {
+    background-color: #fff !important;
+    border-radius: 1em;
+    width: 60%;
+}
+
+#textfieldPhone.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    background-color: #fff !important;
+    border-radius: 1em;
+    height: 0.1em;
+}

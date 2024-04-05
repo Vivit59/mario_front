@@ -10,6 +10,18 @@
     "passwordPlaceholder": "Mot de passe",
     "connect": "Connexion",
     "loginError": "Connexion impossible",
-    "create": "Créer un compte"
+    "create": "Créer un compte",
+    "phone": "Numéro de téléphone",
+    "lastName": "Nom",
+    "firstName": "Prénom",
+    "address": "adresse",
+    "confirmation": "Confirmation",
+    "save": "Créer",
+    "account": "Créer votre compte"
+  },
+  "error": {
+    "required": "{{field}} est obligatoire",
+    "minLen": "au moins {{field}} caractères",
+    "match": "Les mots de passe ne correspondent pas"
   }
 }

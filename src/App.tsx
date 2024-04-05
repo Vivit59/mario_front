@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Menu from "./pages/menu";
 import Login from "./pages/login";
 import CreateAccount from "./pages/createAccount";
+import user from "./models/user";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);

@@ -4,6 +4,8 @@ import "./style.css";
 import { useTranslation } from "react-i18next";
 import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
 import { Unstable_NumberInput as NumberInput } from "@mui/base/Unstable_NumberInput";
+import { styled } from "@mui/system";
+import QuantityInput from "../quantity";
 
 interface Props {
   pizza: Pizza;
@@ -11,6 +13,39 @@ interface Props {
 
 const PizzaCard = ({ pizza }: Props) => {
   const { t } = useTranslation();
+
+  const StyledInputRoot = styled("div")(
+    ({ theme }) => `
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  `
+  );
+
+  const StyledInput = styled("input")(
+    ({ theme }) => `
+    font-size: 0.875rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.375;
+    border-radius: 8px;
+    margin: 0 8px;
+    padding: 10px 12px;
+    outline: 0;
+    min-width: 0;
+    width: 4rem;
+    text-align: center;
+  
+  
+    &:focus-visible {
+      outline: 0;
+    }
+  `
+  );
 
   return (
     <Box display="flex" gap="20px" margin="20px">
@@ -23,16 +58,7 @@ const PizzaCard = ({ pizza }: Props) => {
         <Chip label={pizza.price + " €"} color="success" size="medium" />
         <Box display="flex" alignItems="center" gap="5px">
           <InputLabel>{t("common.quantity")}</InputLabel>
-          <NumberInput
-            id="r31"
-            slots={{
-              root: "div",
-              incrementButton: AddCircleOutline,
-              decrementButton: RemoveCircleOutline,
-            }}
-            min={0}
-            max={10}
-          />
+          <QuantityInput />
         </Box>
       </Box>
     </Box>

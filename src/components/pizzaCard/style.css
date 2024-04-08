@@ -22,10 +22,3 @@ span.MuiChip-label.MuiChip-labelMedium.css-6od3lo-MuiChip-label {
 input#r31.base-NumberInput-input {
     width: 40px;
 }
-
-svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.base-NumberInput-incrementButton.css-i4bv87-MuiSvgIcon-root {
-    position: absolute;
-    right: 0;
-    top: '50%';
-    transform: 'translateY(-50%)'
-}

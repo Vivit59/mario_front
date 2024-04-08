@@ -17,7 +17,7 @@
     "address": "adresse",
     "confirmation": "Confirmation",
     "save": "Créer",
-    "account": "Créer votre compte"
+    "account": "Créer votre compte client"
   },
   "error": {
     "required": "{{field}} est obligatoire",

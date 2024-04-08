@@ -17,7 +17,10 @@
     "address": "adresse",
     "confirmation": "Confirmation",
     "save": "Créer",
-    "account": "Créer votre compte client"
+    "account": "Créer votre compte client",
+    "firstOrder": "Passez votre première commande",
+    "congrats": "Félicitations",
+    "okToOrder": "Vous êtes prêt à commander."
   },
   "error": {
     "required": "{{field}} est obligatoire",

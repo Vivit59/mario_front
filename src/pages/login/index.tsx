@@ -11,8 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import "./style.css";
-import { Link } from "react-router-dom";
-import CreateAccount from "../createAccount";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Props {
   setIsAuthenticated: Function;
@@ -20,6 +19,7 @@ interface Props {
 
 const Login = ({ setIsAuthenticated }: Props) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [error, setError] = useState<Boolean>(false);
 
@@ -57,6 +57,8 @@ const Login = ({ setIsAuthenticated }: Props) => {
       } else {
         setError(true);
       }
+      setIsAuthenticated(true);
+      navigate("/menu");
     },
   });
 

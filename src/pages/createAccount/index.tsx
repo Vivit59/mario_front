@@ -4,6 +4,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  Modal,
   TextField,
   Typography,
 } from "@mui/material";
@@ -12,13 +13,15 @@ import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 import User from "../../models/user";
 import "./style.css";
-
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 interface Props {
-  user: User;
+  setIsAuthenticated: Function;
 }
 
-const CreateAccount = () => {
+const CreateAccount = ({ setIsAuthenticated }: Props) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const schema = yup.object().shape({
     lastName: yup
@@ -88,6 +91,8 @@ const CreateAccount = () => {
         user.phone = values.phone;
         console.log(user);
       }
+      setIsAuthenticated(true);
+      navigate("/congrats");
     },
   });
 

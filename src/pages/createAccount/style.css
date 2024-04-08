@@ -73,3 +73,23 @@ div.MuiBox-root>div.MuiFormControl-root>div.MuiInputBase-root {
     border-radius: 1em;
     height: 0.1em;
 }
+
+#bravo.MuiModal-root.css-79ws1d-MuiModal-root {
+    border-radius: 5em !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    background-color: #3b438b;
+    color: #fbc02c;
+    padding: 30px;
+
+}
+
+#ok.MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center !important;
+
+}

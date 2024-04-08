@@ -7,11 +7,12 @@ import {
   Button,
   Card,
   InputLabel,
-  Link,
   TextField,
   Typography,
 } from "@mui/material";
 import "./style.css";
+import { Link } from "react-router-dom";
+import CreateAccount from "../createAccount";
 
 interface Props {
   setIsAuthenticated: Function;
@@ -90,7 +91,7 @@ const Login = ({ setIsAuthenticated }: Props) => {
           helperText={formik.touched.password && formik.errors.password}
         />
         <Box id="box">
-          <Link href="/create" underline="hover" color={"#fbc02c"}>
+          <Link to="/create" color={"#fbc02c"} id="link">
             {t("common.create")}
           </Link>
           <Button variant="contained" type="submit" className="button">

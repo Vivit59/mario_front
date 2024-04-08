@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./pages/menu";
 import Login from "./pages/login";
 import CreateAccount from "./pages/createAccount";
@@ -16,11 +16,19 @@ function App() {
         <Header />
       </header>
       <main>
-        {isAuthenticated ? (
-          <Menu />
-        ) : (
-          <Login setIsAuthenticated={setIsAuthenticated} />
-        )}
+        <BrowserRouter>
+          <Routes>
+            {isAuthenticated ? (
+              <Route path="/menu" element={<Menu />} />
+            ) : (
+              <Route
+                path="/"
+                element={<Login setIsAuthenticated={setIsAuthenticated} />}
+              ></Route>
+            )}
+            <Route path="/create" element={<CreateAccount />} />
+          </Routes>
+        </BrowserRouter>
       </main>
     </div>
   );

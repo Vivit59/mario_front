@@ -7,6 +7,7 @@ import Login from "./pages/login";
 import CreateAccount from "./pages/createAccount";
 import user from "./models/user";
 import Congrats from "./pages/congrats";
+import OrderOk from "./pages/orderOk";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -34,6 +35,7 @@ function App() {
               }
             />
             <Route path="/congrats" element={<Congrats />} />
+            <Route path="/ok" element={<OrderOk />} />{" "}
           </Routes>
         </BrowserRouter>
       </main>

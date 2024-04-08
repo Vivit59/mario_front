@@ -20,11 +20,17 @@
     "account": "Create your customer account",
     "firstOrder": "Place your first order",
     "congrats": "Congratulations",
-    "okToOrder": "You are ready to order."
+    "okToOrder": "You are ready to order.",
+    "newOrder": "Return to order page"
   },
   "error": {
     "required": "{{field}} is required",
     "minLen": "at least {{field}} characters",
     "match": "Passwords do not match"
+  },
+  "order": {
+    "prepare": "Your order is being prepared.",
+    "delivery": "It will be delivered in 30 minutes.",
+    "validate": "validate the order"
   }
 }

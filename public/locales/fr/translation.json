@@ -20,11 +20,17 @@
     "account": "Créer votre compte client",
     "firstOrder": "Passez votre première commande",
     "congrats": "Félicitations",
-    "okToOrder": "Vous êtes prêt à commander."
+    "okToOrder": "Vous êtes prêt à commander.",
+    "newOrder": "Retour à la page de commande"
   },
   "error": {
     "required": "{{field}} est obligatoire",
     "minLen": "au moins {{field}} caractères",
     "match": "Les mots de passe ne correspondent pas"
+  },
+  "order": {
+    "prepare": "Votre commande est en préparation.",
+    "delivery": "Elle sera livrée dans 30 minutes.",
+    "validate": "valider la commande"
   }
 }

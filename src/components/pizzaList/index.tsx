@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Pizza from "../../models/pizza";
 import PizzaCard from "../pizzaCard";
 import "./style.css";
 import { ShoppingCartCheckout } from "@mui/icons-material";
 import Cart from "../cart";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   pizzas: Pizza[];
@@ -24,7 +25,11 @@ const PizzaList = ({ pizzas }: Props) => {
         <Typography className="select">{t("common.select")}</Typography>
         <Box display="flex" justifyContent="end" gap="15px">
           <Cart />
-          <ShoppingCartCheckout fontSize="large" />
+          <IconButton aria-label={t("order.validate")}>
+            <NavLink to="/ok" aria-label={t("order.validate")}>
+              <ShoppingCartCheckout fontSize="large" />
+            </NavLink>
+          </IconButton>
         </Box>
       </Box>
 

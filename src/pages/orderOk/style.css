@@ -1,0 +1,34 @@
+#ok {
+    border-radius: 2em !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3b438b;
+    color: #fbc02c;
+    padding: 30px;
+    width: 30%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.typo.css-179oa0a-MuiTypography-root {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.lien {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    color: #fbc02c;
+}
+
+#scooter {
+    width: 100%;
+}

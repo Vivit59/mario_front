@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./pages/menu";
 import Login from "./pages/login";
 import CreateAccount from "./pages/createAccount";
-import user from "./models/user";
 import Congrats from "./pages/congrats";
 import OrderOk from "./pages/orderOk";
 

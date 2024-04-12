@@ -31,6 +31,7 @@
   "order": {
     "prepare": "Your order is being prepared.",
     "delivery": "It will be delivered in 30 minutes.",
-    "validate": "validate the order"
+    "validate": "validate the order",
+    "total": "Total"
   }
 }

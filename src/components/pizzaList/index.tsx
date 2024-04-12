@@ -4,8 +4,8 @@ import Pizza from "../../models/pizza";
 import PizzaCard from "../pizzaCard";
 import "./style.css";
 import { ShoppingCartCheckout } from "@mui/icons-material";
-import Cart from "../cart";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 interface Props {
   pizzas: Pizza[];
@@ -13,6 +13,11 @@ interface Props {
 
 const PizzaList = ({ pizzas }: Props) => {
   const { t } = useTranslation();
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const updateTotalPrice = (price: number) => {
+    setTotalPrice(totalPrice + price);
+  };
 
   return (
     <Box marginTop="110px">
@@ -23,8 +28,10 @@ const PizzaList = ({ pizzas }: Props) => {
         margin="30px"
       >
         <Typography className="select">{t("common.select")}</Typography>
-        <Box display="flex" justifyContent="end" gap="15px">
-          <Cart />
+        <Box display="flex" justifyContent="end" gap="15px" alignItems="center">
+          <Typography className="total">
+            {t("order.total")} : {totalPrice.toFixed(2)} €
+          </Typography>
           <IconButton aria-label={t("order.validate")}>
             <NavLink to="/ok" aria-label={t("order.validate")}>
               <ShoppingCartCheckout fontSize="large" />
@@ -34,8 +41,12 @@ const PizzaList = ({ pizzas }: Props) => {
       </Box>
 
       <Box>
-        {pizzas.map((pizza: Pizza) => (
-          <PizzaCard pizza={pizza} />
+        {pizzas?.map((pizza: Pizza) => (
+          <PizzaCard
+            key={pizza.id}
+            pizza={pizza}
+            updateTotalPrice={updateTotalPrice}
+          />
         ))}
       </Box>
     </Box>

@@ -1,51 +1,35 @@
-import { Box, Chip, InputLabel, Typography } from "@mui/material";
+import { Box, Chip, Typography } from "@mui/material";
 import Pizza from "../../models/pizza";
 import "./style.css";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
-import { Unstable_NumberInput as NumberInput } from "@mui/base/Unstable_NumberInput";
-import { styled } from "@mui/system";
-import QuantityInput from "../quantity";
 
 interface Props {
   pizza: Pizza;
+  updateTotalPrice: (price: number) => void;
 }
 
-const PizzaCard = ({ pizza }: Props) => {
+const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
   const { t } = useTranslation();
+  const [quantity, setQuantity] = useState<number>(0);
+  // Ajoutez une fonction pour gérer les quantités
 
-  const StyledInputRoot = styled("div")(
-    ({ theme }) => `
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-  `
-  );
-
-  const StyledInput = styled("input")(
-    ({ theme }) => `
-    font-size: 0.875rem;
-    font-family: inherit;
-    font-weight: 400;
-    line-height: 1.375;
-    border-radius: 8px;
-    margin: 0 8px;
-    padding: 10px 12px;
-    outline: 0;
-    min-width: 0;
-    width: 4rem;
-    text-align: center;
-  
-  
-    &:focus-visible {
-      outline: 0;
+  const handleRemove = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+      updateTotalPrice(-pizza.price);
     }
-  `
-  );
+    console.log(quantity - 1);
+  };
+  const handleAdd = () => {
+    if (quantity < 10) {
+      setQuantity(quantity + 1);
+      updateTotalPrice(pizza.price);
+    }
+
+    console.log(quantity + 1);
+  };
 
   return (
     <Box display="flex" gap="20px" margin="20px">
@@ -54,11 +38,26 @@ const PizzaCard = ({ pizza }: Props) => {
         <Typography variant="h3">{pizza.name}</Typography>
         <Typography variant="h4">{pizza.description}</Typography>
       </Box>
-      <Box>
-        <Chip label={pizza.price + " €"} color="success" size="medium" />
+      <Box display="flex" flexDirection="column" gap="5px">
+        <Chip
+          label={pizza.price.toFixed(2) + " €"}
+          color="success"
+          size="medium"
+        />
         <Box display="flex" alignItems="center" gap="5px">
-          <InputLabel>{t("common.quantity")}</InputLabel>
-          <QuantityInput />
+          <Typography variant="body1">{t("common.quantity")}</Typography>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            gap="5px"
+          >
+            <RemoveCircleOutline onClick={handleRemove} />
+            <Typography variant="body2" style={{ fontSize: "25px" }}>
+              {quantity}
+            </Typography>
+            <AddCircleOutline onClick={handleAdd} />
+          </Box>
         </Box>
       </Box>
     </Box>

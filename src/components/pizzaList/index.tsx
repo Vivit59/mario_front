@@ -32,7 +32,10 @@ const PizzaList = ({ pizzas }: Props) => {
           <Typography className="total">
             {t("order.total")} : {totalPrice.toFixed(2)} €
           </Typography>
-          <IconButton aria-label={t("order.validate")}>
+          <IconButton
+            aria-label={t("order.validate")}
+            disabled={totalPrice === 0}
+          >
             <NavLink to="/ok" aria-label={t("order.validate")}>
               <ShoppingCartCheckout fontSize="large" />
             </NavLink>

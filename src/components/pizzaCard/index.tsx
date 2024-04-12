@@ -35,8 +35,8 @@ const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
     <Box display="flex" gap="20px" margin="20px">
       <img src={pizza.image} alt={pizza.name} height="150rem" />
       <Box className="texte">
-        <Typography variant="h3">{pizza.name}</Typography>
-        <Typography variant="h4">{pizza.description}</Typography>
+        <Typography variant="h2">{pizza.name}</Typography>
+        <Typography variant="h3">{pizza.description}</Typography>
       </Box>
       <Box display="flex" flexDirection="column" gap="5px">
         <Chip

@@ -4,7 +4,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  Modal,
   TextField,
   Typography,
 } from "@mui/material";
@@ -13,8 +12,7 @@ import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 import User from "../../models/user";
 import "./style.css";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 interface Props {
   setIsAuthenticated: Function;
 }
@@ -158,6 +156,8 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
               <Box display="flex" alignItems="center" gap="10px">
                 <label>{t("common.passwordPlaceholder")}</label>
                 <TextField
+                  aria-label={t("common.passwordPlaceholder")}
+                  placeholder={t("common.passwordPlaceholder")}
                   id="textfieldPassword"
                   type="password"
                   onChange={formik.handleChange}
@@ -173,6 +173,8 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
               <Box display="flex" alignItems="center" gap="10px">
                 <label>{t("common.confirmation")}</label>
                 <TextField
+                  aria-label={t("common.confirmation")}
+                  placeholder={t("common.confirmation")}
                   id="textfieldConfirm"
                   type="password"
                   onChange={formik.handleChange}
@@ -191,6 +193,8 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
             <Box display="flex" gap="5px" margin="20px">
               <label>{t("common.address")}</label>
               <TextField
+                aria-label={t("common.address")}
+                placeholder={t("common.address")}
                 id="textfieldAd"
                 type="text"
                 multiline
@@ -208,6 +212,8 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
             <Box display="flex" alignItems="center" gap="5px" margin="20px">
               <label>{t("common.phone")}</label>
               <TextField
+                aria-label={t("common.phone")}
+                placeholder={t("common.phone")}
                 id="textfieldPhone"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}

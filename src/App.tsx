@@ -8,14 +8,17 @@ import CreateAccount from "./pages/createAccount";
 import Congrats from "./pages/congrats";
 import OrderOk from "./pages/orderOk";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import AuthenticationService from "./services/AuthenticationService";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
+    AuthenticationService.isAuthenticated()
+  );
 
   const theme = createTheme({
     palette: {
       error: {
-        main: "#fff", // Changez cette couleur par celle que vous souhaitez
+        main: "#fff",
       },
     },
   });
@@ -44,7 +47,7 @@ function App() {
                 }
               />
               <Route path="/congrats" element={<Congrats />} />
-              <Route path="/ok" element={<OrderOk />} />{" "}
+              <Route path="/ok" element={<OrderOk />} />
             </Routes>
           </BrowserRouter>
         </main>

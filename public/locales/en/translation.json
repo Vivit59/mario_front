@@ -21,7 +21,8 @@
     "firstOrder": "Place your first order",
     "congrats": "Congratulations",
     "okToOrder": "You are ready to order.",
-    "newOrder": "Return to order page"
+    "newOrder": "Return to order page",
+    "technicalError": "Technical error, please try again later"
   },
   "error": {
     "required": "{{field}} is required",

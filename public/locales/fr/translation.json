@@ -21,7 +21,8 @@
     "firstOrder": "Passez votre première commande",
     "congrats": "Félicitations",
     "okToOrder": "Vous êtes prêt à commander.",
-    "newOrder": "Retour à la page de commande"
+    "newOrder": "Retour à la page de commande",
+    "technicalError": "Erreur technique, veuillez réessayer plus tard"
   },
   "error": {
     "required": "{{field}} est obligatoire",

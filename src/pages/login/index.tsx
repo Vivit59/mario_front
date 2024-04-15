@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
+import AuthenticationService from "../../services/AuthenticationService";
 
 interface Props {
   setIsAuthenticated: Function;
@@ -21,7 +22,7 @@ const Login = ({ setIsAuthenticated }: Props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const [error, setError] = useState<Boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const schema = yup.object().shape({
     login: yup
@@ -38,7 +39,7 @@ const Login = ({ setIsAuthenticated }: Props) => {
         t("common.required", { field: t("common.passwordPlaceholder") })
       )
       .test(
-        "4Len",
+        "6Len",
         t("common.car", { field: "6" }),
         (value: string) => value.length >= 6
       ),
@@ -51,14 +52,24 @@ const Login = ({ setIsAuthenticated }: Props) => {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      if (values.login === "1111111111" && values.password === "tototo") {
+      /**if (values.login === "1111111111" && values.password === "tototo") {
         setError(false);
         setIsAuthenticated(true);
       } else {
         setError(true);
       }
       setIsAuthenticated(true);
-      navigate("/menu");
+      navigate("/menu");**/
+      AuthenticationService.login(values.login, values.password)
+        .then((response) => {
+          setIsAuthenticated(response);
+          setError(response ? "" : t("common.loginError"));
+          navigate("/menu");
+        })
+        .catch((reason) => {
+          console.error(reason);
+          setError(t("common.technicalError"));
+        });
     },
   });
 

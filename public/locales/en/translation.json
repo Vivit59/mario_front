@@ -27,7 +27,8 @@
   "error": {
     "required": "{{field}} is required",
     "minLen": "at least {{field}} characters",
-    "match": "Passwords do not match"
+    "match": "Passwords do not match",
+    "recover": "Error when retrieving pizzas:"
   },
   "order": {
     "prepare": "Your order is being prepared.",

@@ -13,7 +13,6 @@ interface Props {
 const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
   const { t } = useTranslation();
   const [quantity, setQuantity] = useState<number>(0);
-  // Ajoutez une fonction pour gérer les quantités
 
   const handleRemove = () => {
     if (quantity > 0) {
@@ -27,8 +26,6 @@ const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
       setQuantity(quantity + 1);
       updateTotalPrice(pizza.price);
     }
-
-    console.log(quantity + 1);
   };
 
   return (

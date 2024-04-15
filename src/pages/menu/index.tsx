@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import PizzaList from "../../components/pizzaList";
 import Pizza from "../../models/pizza";
 //import { mockDataPizza } from "../../data/MockData";
@@ -5,6 +6,7 @@ import PizzaService from "../../services/PizzaService";
 import { useEffect, useState } from "react";
 
 const Menu = () => {
+  const { t } = useTranslation();
   const [pizzaL, setPizzaL] = useState<Pizza[]>([]);
 
   useEffect(() => {
@@ -13,12 +15,11 @@ const Menu = () => {
         const pizzas = await PizzaService.getAll();
         setPizzaL(pizzas);
       } catch (error) {
-        // Gérer les erreurs de récupération des données
-        console.error("Erreur lors de la récupération des pizzas:", error);
+        console.error(t("error.recover"), error);
       }
     };
     fetchData();
-  }, []);
+  }, [t]);
 
   return (
     <div>

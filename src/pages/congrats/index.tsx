@@ -1,11 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import "./style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Congrats = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   return (
     <div>

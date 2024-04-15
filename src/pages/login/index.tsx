@@ -55,11 +55,10 @@ const Login = ({ setIsAuthenticated }: Props) => {
       /**if (values.login === "1111111111" && values.password === "tototo") {
         setError(false);
         setIsAuthenticated(true);
+        navigate("/menu");
       } else {
         setError(true);
-      }
-      setIsAuthenticated(true);
-      navigate("/menu");**/
+      }**/
       AuthenticationService.login(values.login, values.password)
         .then((response) => {
           setIsAuthenticated(response);

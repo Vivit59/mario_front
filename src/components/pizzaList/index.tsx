@@ -27,7 +27,9 @@ const PizzaList = ({ pizzas }: Props) => {
         justifyContent="space-between"
         margin="30px"
       >
-        <Typography className="select">{t("common.select")}</Typography>
+        <Typography className="select" variant="h2">
+          {t("common.select")}
+        </Typography>
         <Box display="flex" justifyContent="end" gap="15px" alignItems="center">
           <Typography className="total">
             {t("order.total")} : {totalPrice.toFixed(2)} €

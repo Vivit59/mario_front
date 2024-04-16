@@ -11,6 +11,11 @@ h2.MuiTypography-root.MuiTypography-h2.css-1sra7t5-MuiTypography-root {
 }
 
 h3.MuiTypography-root.MuiTypography-h3.css-gepadz-MuiTypography-root {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+p.MuiTypography-root.MuiTypography-body1.css-ahj2mt-MuiTypography-root {
     font-size: 1.125rem;
     font-style: italic;
 }

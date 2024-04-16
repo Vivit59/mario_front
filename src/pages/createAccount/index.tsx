@@ -96,7 +96,7 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
 
   return (
     <>
-      <Typography marginTop="100px" id="subtitle">
+      <Typography marginTop="100px" id="subtitle" variant="h2">
         {t("common.account")}
       </Typography>
       <form onSubmit={formik.handleSubmit}>

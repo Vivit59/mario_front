@@ -49,11 +49,11 @@ const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
             justifyContent="center"
             gap="5px"
           >
-            <RemoveCircleOutline onClick={handleRemove} />
+            <RemoveCircleOutline onClick={handleRemove} className="bouton" />
             <Typography variant="body2" style={{ fontSize: "25px" }}>
               {quantity}
             </Typography>
-            <AddCircleOutline onClick={handleAdd} />
+            <AddCircleOutline onClick={handleAdd} className="bouton" />
           </Box>
         </Box>
       </Box>

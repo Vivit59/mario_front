@@ -27,3 +27,7 @@ span.MuiChip-label.MuiChip-labelMedium.css-6od3lo-MuiChip-label {
 input#r31.base-NumberInput-input {
     width: 40px;
 }
+
+.bouton {
+    cursor: pointer;
+}

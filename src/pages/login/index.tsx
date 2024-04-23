@@ -61,9 +61,13 @@ const Login = ({ setIsAuthenticated }: Props) => {
       }**/
       AuthenticationService.login(values.login, values.password)
         .then((response) => {
-          setIsAuthenticated(response);
-          setError(response ? "" : t("common.loginError"));
-          navigate("/menu");
+          if (response) {
+            setIsAuthenticated(true);
+            setError("");
+            navigate("/menu");
+          } else {
+            setError(t("common.loginError"));
+          }
         })
         .catch((reason) => {
           console.error(reason);

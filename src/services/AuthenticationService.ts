@@ -15,16 +15,22 @@ export default class AuthenticationService {
   }
 
   static async login(username: string, password: string): Promise<boolean> {
-    await this.call(new Login(username, password)).then((response) => {
+    try {
+      const response = await this.call(new Login(username, password));
+
       if (response !== undefined) {
         localStorage.setItem("jwt", response.jwt);
         localStorage.setItem("expiration", response.expiration);
         localStorage.setItem("refreshToken", response.refreshToken);
         localStorage.setItem("user", JSON.stringify(response.user));
+        return true;
+      } else {
+        throw new Error("Invalid credentials. Please try again");
       }
-    });
-
-    return new Promise((resolve) => resolve(this.isAuthenticated()));
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
   }
 
   static isAuthenticated(): boolean {

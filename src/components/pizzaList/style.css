@@ -8,3 +8,22 @@ p.total.MuiTypography-root.MuiTypography-body1.css-ahj2mt-MuiTypography-root {
     font-size: 1.5rem;
     font-weight: 600;
 }
+
+.top.MuiBox-root {
+    position: fixed;
+    top: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 95%;
+    background-color: #fff;
+    background: linear-gradient(0deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 15%);
+}
+
+.list {
+    margin-top: 200px;
+    width: 95%;
+}

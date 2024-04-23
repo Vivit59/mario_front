@@ -1,6 +1,6 @@
 export default class User {
   id: number | undefined;
-  phone: string = "";
+  username: string = "";
   password: string = "";
   firstName: string = "";
   lastName: string = "";

@@ -21,12 +21,7 @@ const PizzaList = ({ pizzas }: Props) => {
 
   return (
     <Box marginTop="110px">
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-        margin="30px"
-      >
+      <Box className="top">
         <Typography className="select" variant="h2">
           {t("common.select")}
         </Typography>
@@ -45,7 +40,7 @@ const PizzaList = ({ pizzas }: Props) => {
         </Box>
       </Box>
 
-      <Box>
+      <Box className="list">
         {pizzas?.map((pizza: Pizza) => (
           <PizzaCard
             key={pizza.id}

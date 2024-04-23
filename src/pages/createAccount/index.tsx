@@ -10,9 +10,10 @@ import {
 import { useFormik } from "formik";
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
-import User from "../../models/user";
+import User from "../../models/security/User";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import CreationService from "../../services/CreationService";
 interface Props {
   setIsAuthenticated: Function;
 }
@@ -58,9 +59,9 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
     address: yup
       .string()
       .required(t("error.required", { field: t("common.address") })),
-    phone: yup
+    username: yup
       .string()
-      .required(t("error.required", { field: t("common.phone") }))
+      .required(t("error.required", { field: t("common.username") }))
       .test(
         "10len",
         t("error.minLen", { field: "10" }),
@@ -76,21 +77,37 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
       password: "",
       password2: "",
       address: "",
-      phone: "",
+      username: "",
     },
     validationSchema: schema,
-    onSubmit: (values) => {
-      if (values.password === values.password2) {
-        let user = new User();
-        user.lastName = values.lastName;
-        user.firstName = values.firstName;
-        user.password = values.password;
-        user.address = values.address;
-        user.phone = values.phone;
-        console.log(user);
+    onSubmit: async (values) => {
+      try {
+        const newUser: User = {
+          lastname: values.lastName,
+          firstname: values.firstName,
+          password: values.password,
+          address: values.address,
+          username: values.username,
+        };
+
+        console.log(newUser);
+
+        const response = await CreationService.create(newUser);
+        if (response) {
+          setIsAuthenticated(true);
+
+          localStorage.setItem("jwt", response.jwt);
+          localStorage.setItem("expiration", response.expiration);
+          localStorage.setItem("refreshToken", response.refreshToken);
+          localStorage.setItem("user", JSON.stringify(response.user));
+
+          navigate("/congrats");
+        } else {
+          console.error("");
+        }
+      } catch (error) {
+        console.error("Error");
       }
-      setIsAuthenticated(true);
-      navigate("/congrats");
     },
   });
 
@@ -99,12 +116,13 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
       <Typography marginTop="100px" id="subtitle" variant="h2">
         {t("common.account")}
       </Typography>
-      <form onSubmit={formik.handleSubmit}>
-        <Card
-          id="carte"
-          elevation={2}
-          sx={{ display: "flex", flexDirection: "column", gap: "5px" }}
-        >
+
+      <Card
+        id="carte"
+        elevation={2}
+        sx={{ display: "flex", flexDirection: "column", gap: "5px" }}
+      >
+        <form onSubmit={formik.handleSubmit}>
           <CardContent>
             <Box
               display="flex"
@@ -217,10 +235,12 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
                 id="textfieldPhone"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                name="phone"
-                value={formik.values.phone}
-                error={formik.touched.phone && Boolean(formik.errors.phone)}
-                helperText={formik.touched.phone && formik.errors.phone}
+                name="username"
+                value={formik.values.username}
+                error={
+                  formik.touched.username && Boolean(formik.errors.username)
+                }
+                helperText={formik.touched.username && formik.errors.username}
               />
             </Box>
           </CardContent>
@@ -235,8 +255,8 @@ const CreateAccount = ({ setIsAuthenticated }: Props) => {
               {t("common.save")}
             </Button>
           </CardActions>
-        </Card>
-      </form>
+        </form>
+      </Card>
     </>
   );
 };

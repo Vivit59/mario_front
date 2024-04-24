@@ -14,10 +14,27 @@ interface Props {
 const PizzaList = ({ pizzas }: Props) => {
   const { t } = useTranslation();
   const [totalPrice, setTotalPrice] = useState(0);
+  const [orderLines, setOrderLines] = useState<any[]>([]);
 
   const updateTotalPrice = (price: number) => {
     setTotalPrice(totalPrice + price);
   };
+
+  const updateOrderLine = (pizzaId: number, quantity: number) => {
+    setOrderLines((prevOrderLines) => ({
+      ...prevOrderLines,
+      [pizzaId]: quantity,
+    }));
+  };
+  /*
+  const newOrder = (userId: string, orderLines: any[]) => {
+    return {
+      userId: userId,
+      orderLines: orderLines,
+    };
+  };
+  */
+  //const order = newOrder(userId, orderLines);
 
   return (
     <Box marginTop="110px">
@@ -46,6 +63,7 @@ const PizzaList = ({ pizzas }: Props) => {
             key={pizza.id}
             pizza={pizza}
             updateTotalPrice={updateTotalPrice}
+            updateOrderLine={updateOrderLine}
           />
         ))}
       </Box>

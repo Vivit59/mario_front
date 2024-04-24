@@ -8,9 +8,10 @@ import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
 interface Props {
   pizza: Pizza;
   updateTotalPrice: (price: number) => void;
+  updateOrderLine: (pizzaId: number, quantity: number) => void;
 }
 
-const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
+const PizzaCard = ({ pizza, updateTotalPrice, updateOrderLine }: Props) => {
   const { t } = useTranslation();
   const [quantity, setQuantity] = useState<number>(0);
 
@@ -18,13 +19,14 @@ const PizzaCard = ({ pizza, updateTotalPrice }: Props) => {
     if (quantity > 0) {
       setQuantity(quantity - 1);
       updateTotalPrice(-pizza.price);
+      updateOrderLine(pizza.id, quantity - 1);
     }
-    console.log(quantity - 1);
   };
   const handleAdd = () => {
     if (quantity < 10) {
       setQuantity(quantity + 1);
       updateTotalPrice(pizza.price);
+      updateOrderLine(pizza.id, quantity + 1);
     }
   };
 

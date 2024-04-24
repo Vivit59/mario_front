@@ -3,15 +3,8 @@ import { useTranslation } from "react-i18next";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-interface Props {
-  setIsAuthenticated: Function;
-}
-
-const Congrats = ({ setIsAuthenticated }: Props) => {
+const Congrats = () => {
   const { t } = useTranslation();
-  const handleClick = () => {
-    setIsAuthenticated(true);
-  };
 
   return (
     <div>
@@ -23,12 +16,7 @@ const Congrats = ({ setIsAuthenticated }: Props) => {
           {t("common.okToOrder")}
         </Typography>
 
-        <Link
-          to={"/menu"}
-          color={"#fbc02c"}
-          className="lien"
-          onClick={handleClick}
-        >
+        <Link to={"/menu"} color={"#fbc02c"} className="lien">
           {t("common.firstOrder")}
         </Link>
       </Box>

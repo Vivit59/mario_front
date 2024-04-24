@@ -46,10 +46,7 @@ function App() {
                   <CreateAccount setIsAuthenticated={setIsAuthenticated} />
                 }
               />
-              <Route
-                path="/congrats"
-                element={<Congrats setIsAuthenticated={setIsAuthenticated} />}
-              />
+              <Route path="/congrats" element={<Congrats />} />
               <Route path="/ok" element={<OrderOk />} />
             </Routes>
           </BrowserRouter>
